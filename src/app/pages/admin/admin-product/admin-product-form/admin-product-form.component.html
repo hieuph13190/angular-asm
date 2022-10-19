@@ -1,0 +1,32 @@
+<div>
+  <a routerLink="/admin/products">
+    <button class="btn btn-primary">Quay lại</button>
+  </a>
+</div>
+
+
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="">Product Name</label>
+
+    <input type="text" class="form-control" formControlName="name">
+    <app-show-validate [field]="productForm.get('name')" key="Tên sản phẩm"></app-show-validate><br>
+    <label for="">image</label>
+    <input type="text" class="form-control" formControlName="image">
+    <app-show-validate [field]="productForm.get('image')" key="Tên sản phẩm"></app-show-validate><br>
+    <label for="">price</label>
+    <input type="text" class="form-control" formControlName="price">
+    <app-show-validate [field]="productForm.get('price')" key="Tên sản phẩm"></app-show-validate><br>
+    <label for="">desc</label>
+    <input type="text" class="form-control" formControlName="desc">
+    <app-show-validate [field]="productForm.get('desc')" key="Tên sản phẩm"></app-show-validate><br>
+    <label for="">categoryId</label>
+    <input type="text" class="form-control" formControlName="categoryId">
+    <app-show-validate [field]="productForm.get('categoryId')" key="Tên sản phẩm"></app-show-validate><br>
+
+
+  </div>
+  <div>
+    <button class="btn btn-success" [disabled]="!productForm.valid">Submit</button>
+  </div>
+</form>
